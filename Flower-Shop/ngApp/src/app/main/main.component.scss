@@ -1,0 +1,133 @@
+$darkblue:#123C69;
+$offWhite:#EEE2DC;
+$gray:#BEB2B5;
+$darkRed:#AC3B61;
+$lightSalmon: #EDC7B7;
+
+
+body{
+    font-family: cursive;
+    font-style: italic;
+    background-color: $offWhite;
+}
+
+*{
+    font-family: cursive;
+        font-style: italic;
+}
+
+.userWelcome{
+    color: $darkRed;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    .navbar{
+        min-height: 80px;
+        &__IrisTitle{
+            color: $darkRed;
+            font-size: 60px;
+            font-weight: bold;
+            border: 5px dashed $gray;
+            user-select: none;
+            text-decoration: none;
+        }
+        &__Links{
+            height: 100px;
+            padding-top: 20px;
+            a{
+                text-decoration: none!important;
+                cursor: pointer;
+                color: $darkblue;
+                margin-right: 15px;
+                margin-bottom: 25px;
+            }
+            a:hover {
+                text-decoration: none;
+                box-shadow: none;
+                color: $darkblue;
+            }
+            .user{
+                color: $gray;
+                font-weight: bold;
+            }
+        }
+    }
+    .content{
+        text-align: center;
+    }
+    .footer{
+        min-height: 30px;
+        text-align: center;
+        color: $darkblue;
+        &__Link{
+            color: $darkRed;
+        }
+    }
+}
+
+.FlowersTable{
+    // margin: 40px;
+    // width: 90%;
+    text-align: center;
+    color: $darkblue;
+    &__Caption{
+        color: $darkRed; 
+    }
+}
+
+img{
+    width: 40px;
+    height: 40px;
+}
+
+.emptyFlowers{
+    margin-top: 15px;
+    text-align: center;
+    color: $darkblue;
+    font-family: cursive;
+    font-style: italic;
+}
+
+.modal{
+    &-title{
+        color: $darkRed;
+        font-family: cursive;
+        font-style: italic;
+        font-weight: bold;
+    }
+    &-header{
+        background-color: $lightSalmon;
+    }
+    &-footer{
+        background-color: $lightSalmon;
+    }
+}
+
+.form{
+    &--label{
+        color: $darkblue;
+    }
+    &--input{
+        color: $darkblue;
+    }
+}
+
+.number{
+    display: inline-block;
+    height: 40px;
+}
+
+.shopBag{
+    font-size: 25px;
+}
+
+.notificationNumner{
+    font-size: 15px;
+    position: absolute;
+    margin-bottom: 30px;
+    margin-right: 30px;
+    color: $darkRed;
+    font-weight: bold;
+}

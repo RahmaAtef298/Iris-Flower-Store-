@@ -1,0 +1,22 @@
+$darkblue:#123C69;
+$offWhite:#EEE2DC;
+$gray:#BEB2B5;
+$darkRed:#AC3B61;
+$lightSalmon: #EDC7B7;
+
+
+.homeContent{
+    margin: 100px;
+    &__image{
+        width: 500px;
+        height: 500px;
+    }
+    &__title{
+        color: $lightSalmon;
+        font-weight: bold;
+    }
+    &__text{
+        color: $darkblue;
+        font-size: 20px;
+    }
+}

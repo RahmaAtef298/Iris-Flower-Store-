@@ -1,0 +1,89 @@
+//variables
+$darkblue:#123C69;
+$offWhite:#EEE2DC;
+$gray:#BEB2B5;
+$darkRed:#AC3B61;
+$lightSalmon: #EDC7B7;
+
+// * {
+//     outline: 1px solid black
+// }
+body{
+    font-family: cursive;
+    font-style: italic;
+    margin-left: -15px ;
+    width: 100%;
+    .wrapper{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      .navbar{
+          background-color: $darkblue;
+          min-height: 51px;
+          border:3px dashed $lightSalmon;
+          margin-right: -30px;
+          h3{
+            color: $offWhite;
+          }
+          &--logout{
+            text-decoration: none!important;
+            cursor: pointer;
+            color: $offWhite;
+            text-align: right;
+          }
+      }
+      .content{
+          display: flex;
+          margin-right: -30px;
+          min-height: 594px;
+          &__left{
+              flex-basis: 22%;
+              background-color: $darkblue;
+          }
+          &__right{
+              flex-basis: 78%;
+              background-color: $lightSalmon;
+          }
+      }
+      
+  }
+  
+}
+
+.accordion{
+    user-select:none;
+  }
+  .accordion--title{
+    margin-top: 12px;
+    letter-spacing: 2px;
+    padding: 10px 11px;
+    color: $darkRed;
+    cursor: pointer;
+    transition: 2s ease;
+  }
+  .accordion--title:hover {
+    letter-spacing: 3px;
+  }
+  .accordion--content {
+    color: $offWhite;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  a{
+    text-decoration: none!important;
+    cursor: pointer;
+    color: $offWhite;
+  }
+  a:hover {
+    text-decoration: none;
+    box-shadow: none;
+    color: $offWhite;
+  } 
+  ul{
+    list-style-type: none;
+  }
+  .accordion--content--open {
+    display: block;
+  }
+  
+

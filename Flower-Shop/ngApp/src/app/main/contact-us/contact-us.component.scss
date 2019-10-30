@@ -1,0 +1,25 @@
+$darkblue:#123C69;
+$offWhite:#EEE2DC;
+$gray:#BEB2B5;
+$darkRed:#AC3B61;
+$lightSalmon: #EDC7B7;
+
+.contactusContent{
+     color: $darkblue;
+     font-size: 25px;
+     margin: auto;
+     margin-top: 146px;
+     margin-bottom: 146px;
+     width: 50%;
+     a{
+        text-decoration: none!important;
+        cursor: pointer;
+        color: $gray;
+        margin-right: 15px;
+    }
+    a:hover {
+        text-decoration: none;
+        box-shadow: none;
+        color: $gray;
+    }
+}

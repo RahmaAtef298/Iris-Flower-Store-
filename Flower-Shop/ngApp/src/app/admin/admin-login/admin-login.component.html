@@ -1,0 +1,14 @@
+
+    <div class="login">
+             <h3>Admin Login</h3>
+             <div class="form-group">
+                <form [formGroup]="adminLoginForm">
+                  <label for="AdminEmail">Email address</label>
+                  <input type="email" class="form-control" formControlName="email" id="AdminEmail" placeholder="Enter email">
+                  <label for="AdminPassword">Password</label>
+                  <input type="password" class="form-control" formControlName="password" id="AdminPassword" placeholder="Password">
+                  <br>
+                  <button type="submit" (click)="adminLogin()" class="btn btn-secondary">Login</button>
+                </form>
+             </div>
+    </div>

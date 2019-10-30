@@ -1,0 +1,124 @@
+<body class="container-fluid">
+        <div class="wrapper">
+            <div class="navbar">
+                <h2 class="navbar__IrisTitle" routerLink="/Home">Iris Store</h2>
+                <div class="navbar__Links">
+                        <a routerLink="/Gallery">Gallery</a>
+                        <a routerLink="/AboutUs">About Us</a>
+                        <a routerLink="/ContactUs">Contact Us</a>
+                        <a class="user" *ngIf="!userIsAuthenticated" (click)="openModal(LoginModal)">Log In</a>
+                        <a class="user" *ngIf="!userIsAuthenticated" (click)="openModal(SignUpModal)">Sign Up</a>
+                        <a class="user" *ngIf="userIsAuthenticated" (click)="Logout()">Logout</a>
+                        <span class="userWelcome" *ngIf="userIsAuthenticated">Welcome {{ username }} </span>
+                        <div class="number" *ngIf="userIsAuthenticated"><span class="notificationNumner">{{boughtFlowers.length}}</span></div>
+                        <a class="shopBag" *ngIf="userIsAuthenticated" (click)="openModal(boughtFlowersModal)"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            <div class="content">
+                    <router-outlet></router-outlet>
+            </div>
+            <div class="footer">
+                    <p>Iris Store &copy; Site By 
+                        <a  class="footer__Link" href="mailto:rahmaroma158@gmail.com">Rahma Atef</a>
+                    </p>
+            </div>
+        </div>
+</body>    
+
+
+<!-- Bought Flower Modal -->
+
+
+<ng-template #boughtFlowersModal let-modal class="modal-lg">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="modal-basic-title">Bought Flowers List</h4>
+                  <button type="button" class="close" aria-label="Close" (click)="ModalRef.hide()">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                        <table class="table FlowersTable" *ngIf="boughtFlowers.length > 0">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Picture</th>
+                                    <th scope="col">Flower Amoumt</th>
+                                    <th scope="col">Flowers Price</th>
+                                    <th scope="col">Delete</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr *ngFor="let boughtFlower of boughtFlowers">
+                                    <th *ngIf="userId === boughtFlower.buyer" scope="row">{{ boughtFlower.name }}</th>
+                                    <td *ngIf="userId === boughtFlower.buyer">
+                                      <img [src]="boughtFlower.imagePath" [alt]="boughtFlower.name">
+                                    </td>
+                                    <td *ngIf="userId === boughtFlower.buyer">{{ boughtFlower.flowerAmoumt }}</td>
+                                    <td *ngIf="userId === boughtFlower.buyer">{{ boughtFlower.flowersPrice }}$</td>
+                                    <td *ngIf="userId === boughtFlower.buyer">
+                                      <button type="button" class="btn btn-outline-danger"  (click)="onDelete(boughtFlower.id)">Delete</button>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                        </table>
+                        <p class="emptyFlowers" *ngIf="boughtFlowers.length <= 0">No Bought Flowers yet .</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-outline-secondary" (click)="ModalRef.hide()">Close</button>
+                </div>
+</ng-template>
+
+
+<!-- Login Modal -->
+
+
+<ng-template #LoginModal let-modal class="modal-lg">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="modal-basic-title">Login Form</h4>
+                  <button type="button" class="close" aria-label="Close" (click)="ModalRef.hide()">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                        <form [formGroup]="loginForm" class="form" class="form-group" >
+                           <label class="form--label" for="AdminEmail">Email</label>
+                           <input class="form--input" type="email" formControlName="email" class="form-control" id="AdminEmail" placeholder="Enter Email">
+                           <label class="form--label" for="AdminPassword">Password</label>
+                           <input class="form--input" type="password" formControlName="password" class="form-control" id="AdminPassword" placeholder="Enter Password">
+                        </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-outline-secondary" (click)="ModalRef.hide()">Close</button>
+                  <button type="submit" class="btn btn-outline-secondary" (click)="login()">Login</button>
+                </div>
+</ng-template>
+
+
+<!-- SignUp Modal -->
+
+
+<ng-template #SignUpModal let-modal class="modal-lg">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="modal-basic-title">Sign Up Form</h4>
+                  <button type="button" class="close" aria-label="Close" (click)="ModalRef.hide()">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                        <form (submit)="signup()" [formGroup]="signupForm" class="form" class="form-group" >
+                           <label class="form--label" for="AdminUsername">User Name</label>
+                           <input class="form--input" type="text" formControlName="username" class="form-control" id="AdminUsername" placeholder="Enter Username">
+                           <label class="form--label" for="AdminEmail">Email address</label>
+                           <input class="form--input" type="email" formControlName="email" class="form-control" id="AdminEmail" placeholder="Enter Email">
+                           <label class="form--label" for="AdminPassword">Password</label>
+                           <input class="form--input" type="password" formControlName="password" class="form-control" id="AdminPassword" placeholder="Enter Password">
+                        </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-outline-secondary" (click)="ModalRef.hide()">Close</button>
+                  <button type="submit" class="btn btn-outline-secondary" (click)="signup()">Signup</button>
+                </div>
+</ng-template>
+
+
+

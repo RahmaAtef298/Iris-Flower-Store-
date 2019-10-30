@@ -1,0 +1,30 @@
+//variables
+$darkblue:#123C69;
+$offWhite:#EEE2DC;
+$gray:#BEB2B5;
+$darkRed:#AC3B61;
+$lightSalmon: #EDC7B7;
+
+.FlowerForm{
+    margin: 40px;
+    //width: 1010px;
+    color: $darkblue;
+}
+.FormTitle{
+    text-align: center;
+    color: $darkRed;
+}
+
+#FlowerImage{
+    visibility: hidden;
+}
+  
+.image-preview {
+    height: 30px;
+    width: 30px;
+    margin: 1rem 0;
+}
+  
+.image-preview img {
+    height: 100%;
+}

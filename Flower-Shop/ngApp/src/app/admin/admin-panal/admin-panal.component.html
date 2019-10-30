@@ -1,0 +1,27 @@
+<body class="container-fluid">
+    <div class="wrapper">
+        <div class="navbar">
+            <h3>Iris Store AdminPanal</h3>
+            <a class="navbar--logout" (click)="adminLogin()">Logout</a>
+        </div>
+        <div class="content">
+            <div class="content__left">
+                <div class="dashboard">
+                    <div class="accordion">
+                        <div>
+                            <h3 class="accordion--title" (click)="accordionExpended=!accordionExpended"><i class="fas fa-list"></i>&nbsp;Dash Board </h3>
+                            <ul class="accordion--content accordion--content--open" *ngIf="accordionExpended">
+                                <li><a routerLink="/ListFlowers"><i class="fas fa-stream"></i>&nbsp;List Flowers</a></li>
+                                <li><a routerLink="/AddFlower"><i class="far fa-plus-square"></i>&nbsp;Add Flower</a></li>
+                            </ul>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div class="content__right">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+    
+</body>

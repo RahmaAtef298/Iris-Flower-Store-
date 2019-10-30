@@ -1,0 +1,31 @@
+<table class="table FlowersTable" *ngIf="flowers.length > 0 && !isLoading">
+        <caption class="FlowersTable__Caption">List of Flowers</caption>
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Picture</th>
+            <th scope="col">Arrival Date</th>
+            <th scope="col">Bloom Price</th>
+            <th scope="col">Update </th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        <tbody  *ngFor="let flower of flowers">
+          <tr>
+            <th scope="row">{{ flower.name }}</th>
+            <td>
+              <img [src]="flower.imagePath" [alt]="flower.name">
+            </td>
+            <td>{{ flower.arrivalDate }}</td>
+            <td>{{ flower.bloomPrice }}$</td>
+            <td>
+              <!-- <button type="button" class="btn btn-outline-secondary">Update</button> -->
+              <a class="btn btn-outline-secondary" [routerLink]="['/EditFlower', flower.id]">Update</a>
+            </td>
+            <td>
+              <button type="button" class="btn btn-outline-danger"  (click)="onDelete(flower.id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+<p class="emptyFlowers" *ngIf="flowers.length <= 0 && !isLoading">No Flowers yet .</p>

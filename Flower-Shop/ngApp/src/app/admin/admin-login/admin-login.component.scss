@@ -1,0 +1,42 @@
+//variables
+$darkblue:#123C69;
+$offWhite:#EEE2DC;
+$gray:#BEB2B5;
+$darkRed:#AC3B61;
+$lightSalmon: #EDC7B7;
+
+body{
+    background-color: $darkblue;
+    height: 657px;
+    font-family: cursive;
+    font-style: italic;
+}
+
+.login{
+    font-family: cursive;
+    font-style: italic;
+    position: absolute;
+    width: 30%;
+	height: 50%;
+	border: 4px solid $darkRed;
+    margin-top: 150px;
+    margin-left: 480px;
+	background-color: $offWhite;
+    text-align: center;
+    padding-top: 50px;
+    form{
+        div{
+            input{
+                width: 50px;
+                padding: 100px;
+            }
+            label{
+                color: $darkRed;
+            }
+        }
+        h3{
+            color: $darkblue;
+            text-decoration: underline;
+        }
+    }
+}

@@ -1,0 +1,31 @@
+$darkblue:#123C69;
+$offWhite:#EEE2DC;
+$gray:#BEB2B5;
+$darkRed:#AC3B61;
+$lightSalmon: #EDC7B7;
+
+agm-map {
+    height: 300px;
+  }
+  
+.contain{
+    margin: auto;
+    width: 600px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.aboutusContent{
+    &__address{
+        color: $lightSalmon;
+        text-decoration:  underline;
+    }
+    &__workhours{
+        color: $darkRed;
+    }
+    &__shopowner{
+        color: $darkRed;
+    }
+    p{
+        color: $darkblue;
+    }
+}

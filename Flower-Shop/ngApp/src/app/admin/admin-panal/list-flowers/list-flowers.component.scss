@@ -1,0 +1,27 @@
+//variables
+$darkblue:#123C69;
+$offWhite:#EEE2DC;
+$gray:#BEB2B5;
+$darkRed:#AC3B61;
+$lightSalmon: #EDC7B7;
+
+.FlowersTable{
+    margin: 40px;
+    width: 90%;
+    //width: 1010px;
+    text-align: center;
+    color: $darkblue;
+    &__Caption{
+        color: $darkRed; 
+    }
+}
+
+img{
+    width: 40px;
+    height: 40px;
+}
+
+.emptyFlowers{
+    margin-top: 15px;
+    text-align: center;
+}
