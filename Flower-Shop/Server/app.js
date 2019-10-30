@@ -8,24 +8,16 @@ var FlowerRouter = require('./Routes/FlowerRoute');
 var UserRouter = require('./Routes/UserRoute');
 var BoughtFlowerRouter = require('./Routes/BoughtFlowerRoute');
 
-// mongoose
-//   .connect(
-//     "mongodb+srv://Rahma:0123456789rahma@cluster0-2g6em.mongodb.net/FlowersDB?retryWrites=true&w=majority"
-//   )
-//   .then(() => {
-//     console.log("Connected to database!");
-//   })
-//   .catch(() => {
-//     console.log("Connection failed!");
-//   });
-
-mongoose.connect("mongodb://localhost:27017/FlowersDB" ,err => {
-    if(err){
-        console.error(`Eroro ! ${err}`);
-    }else{
-        console.log(`Connected to MongoDB`)
-    }
-});
+mongoose
+  .connect(
+    "mongodb+srv://Rahma:0123456789rahma@cluster0-2g6em.mongodb.net/FlowerDB?retryWrites=true&w=majority"
+  )
+  .then(() => {
+    console.log("Connected to database!");
+  })
+  .catch(() => {
+    console.log("Connection failed!");
+  });
  
 const app = express();
 const normalizePort = val => {
